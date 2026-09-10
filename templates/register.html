@@ -1,0 +1,119 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5af19, #f12711); /* Warm orange-red gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #f12711;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d01a0c;
+        }
+
+        .login-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .login-link a {
+            color: #f12711;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h2>Create Your Account</h2>
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+        <form method="POST" action="/register">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            Already have an account? <a href="/">Login here</a>
+        </div>
+    </div>
+</body>
+</html>

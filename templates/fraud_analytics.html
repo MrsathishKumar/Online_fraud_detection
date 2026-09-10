@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center text-primary">Fraud Analytics Dashboard</h2>
+    
+    <div class="row">
+        <!-- Fraud vs Legitimate Transactions -->
+        <div class="col-md-4">
+            <h5 class="text-center">Fraud vs Legitimate Transactions</h5>
+            <img src="data:image/png;base64,{{ fraud_graph }}" class="img-fluid rounded shadow" alt="Fraud Chart">
+        </div>
+
+        <!-- Fraud Probability Distribution -->
+        <div class="col-md-4">
+            <h5 class="text-center">Fraud Probability Distribution</h5>
+            <img src="data:image/png;base64,{{ fraud_distribution }}" class="img-fluid rounded shadow" alt="Probability Distribution">
+        </div>
+
+        <!-- Fraud Transactions by Location -->
+        <div class="col-md-4">
+            <h5 class="text-center">Fraud Transactions by Location</h5>
+            <img src="data:image/png;base64,{{ fraud_by_location }}" class="img-fluid rounded shadow" alt="Fraud by Location">
+        </div>
+    </div>
+</div>
+{% endblock %}

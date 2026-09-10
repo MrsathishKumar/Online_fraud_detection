@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Confirmation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        /* Background with a soft gradient */
+        body {
+            background: linear-gradient(to right, #f8c291, #6a89cc);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #3d3d3d;
+        }
+
+        /* Glass effect container */
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            width: 450px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Styled table */
+        table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table, td {
+            border: 1px solid #b2bec3;
+        }
+
+        td {
+            padding: 10px;
+            font-size: 16px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.6);
+            color: #3d3d3d;
+        }
+
+        strong {
+            color: #3867d6;
+        }
+
+        /* Styled button */
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background: #3867d6;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background: #273c75;
+            box-shadow: 0 5px 15px rgba(56, 103, 214, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✅ Report Submitted Successfully</h1>
+        <p>Your report has been successfully submitted. Below are the details:</p>
+        
+        <h3>📋 Report Details:</h3>
+        <table>
+            <tr>
+                <td><strong>Transaction ID:</strong></td>
+                <td>{{ transaction_id }}</td>
+            </tr>
+            <tr>
+                <td><strong>Reported By:</strong></td>
+                <td>{{ user_name }}</td>
+            </tr>
+            <tr>
+                <td><strong>Reason for Reporting:</strong></td>
+                <td>{{ reason }}</td>
+            </tr>
+        </table>
+        
+        <p>If you need further assistance, please contact us.</p>
+        
+        <a href="{{ url_for('home') }}">🏠 Return to Home</a>
+    </div>
+</body>
+</html>

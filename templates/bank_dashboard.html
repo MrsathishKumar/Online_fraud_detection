@@ -1,0 +1,24 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Amount</th>
+            <th>Phone Number</th>
+            <th>Location</th>
+            <th>Fraud Probability</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fraud in reported_frauds %}
+    <tr>
+        <td>{{ fraud.transaction_id }}</td>
+        <td>{{ fraud.amount }}</td>
+        <td>{{ fraud.phone_number }}</td>
+        <td>{{ fraud.location }}</td>
+    </tr>
+{% endfor %}
+
+        <tr><td colspan="5">No fraud reports available.</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
